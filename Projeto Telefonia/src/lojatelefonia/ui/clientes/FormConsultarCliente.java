@@ -50,7 +50,7 @@ public class FormConsultarCliente extends javax.swing.JInternalFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Nome", "Endereço", "Sexo", "Estado Civil"
+                "Nome", "Endereço", "Sexo", "Estado Civil", "CPF"
             }
         ));
         jScrollPaneClientes.setViewportView(jTableClientes);
