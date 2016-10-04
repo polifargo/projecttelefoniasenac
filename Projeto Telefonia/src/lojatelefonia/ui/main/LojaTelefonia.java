@@ -16,15 +16,7 @@ import java.awt.Image;
 import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JInternalFrame;
-/*
-aoigoaid
-sdiuasgd
-gsfgjs
-gjagja
-jafgjasfghajs
-asrtjsag
 
-*/
 /**
  *
  * @author matheus.esanto1
