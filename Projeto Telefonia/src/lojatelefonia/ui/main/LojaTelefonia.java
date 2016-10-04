@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package lojatelefonia.ui.main;
-//testando
+
 import lojatelefonia.ui.clientes.FormCadastrarCliente;
 import lojatelefonia.ui.clientes.FormConsultarCliente;
 import lojatelefonia.ui.produtos.FormCadastrarProduto;
