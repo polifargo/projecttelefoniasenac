@@ -5,6 +5,7 @@
  */
 package lojatelefonia.ui.produtos;
 
+import javax.swing.JOptionPane;
 import lojatelefonia.ui.clientes.*;
 
 /**
@@ -41,8 +42,8 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
         jTextFieldProductCode = new javax.swing.JTextField();
         jButtonSave = new javax.swing.JButton();
         jButtonCancel = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        jLabelPattern = new javax.swing.JLabel();
+        jComboBoxChoosePattern = new javax.swing.JComboBox();
 
         setClosable(true);
         setIconifiable(true);
@@ -64,6 +65,11 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
         jLabelProductCode.setText("N° Série");
 
         jButtonSave.setText("Salvar");
+        jButtonSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSaveActionPerformed(evt);
+            }
+        });
 
         jButtonCancel.setText("Cancelar");
         jButtonCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -72,9 +78,9 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel1.setText("Marca");
+        jLabelPattern.setText("Marca");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Samsung", "Apple", "LG", "Nokia", "Lenovo", "Motorola", "ASUS" }));
+        jComboBoxChoosePattern.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Samsung", "Apple", "LG", "Nokia", "Lenovo", "Motorola", "ASUS" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,9 +103,9 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
+                                        .addComponent(jLabelPattern)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(jComboBoxChoosePattern, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addComponent(jLabelProductQty)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -142,8 +148,8 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
                     .addComponent(jTextFieldProductCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelPattern)
+                    .addComponent(jComboBoxChoosePattern, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSave)
@@ -159,14 +165,19 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_jButtonCancelActionPerformed
 
+    private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showConfirmDialog(null, "Tem certeza que deseja salvar?");
+    }//GEN-LAST:event_jButtonSaveActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancel;
     private javax.swing.JButton jButtonSave;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBoxChoosePattern;
     private javax.swing.JComboBox jComboBoxProductColor;
     private javax.swing.JComboBox jComboBoxProductDesc;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelPattern;
     private javax.swing.JLabel jLabelProductCode;
     private javax.swing.JLabel jLabelProductColor;
     private javax.swing.JLabel jLabelProductDesc;

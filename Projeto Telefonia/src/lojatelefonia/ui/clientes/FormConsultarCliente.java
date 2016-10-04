@@ -5,6 +5,8 @@
  */
 package lojatelefonia.ui.clientes;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author matheus.esanto1

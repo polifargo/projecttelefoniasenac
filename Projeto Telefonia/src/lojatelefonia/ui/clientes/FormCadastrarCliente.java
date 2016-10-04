@@ -5,6 +5,8 @@
  */
 package lojatelefonia.ui.clientes;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author matheus.esanto1
@@ -34,7 +36,7 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
         jLabelEC = new javax.swing.JLabel();
         jLabelBirthday = new javax.swing.JLabel();
         jButtonSave = new javax.swing.JButton();
-        jButtonClose = new javax.swing.JButton();
+        jButtonCancel = new javax.swing.JButton();
         jLabelBDay = new javax.swing.JLabel();
         jLabelBMonth = new javax.swing.JLabel();
         jLabelBYear = new javax.swing.JLabel();
@@ -65,11 +67,16 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
         jLabelBirthday.setText("Data de Nascimento");
 
         jButtonSave.setText("Salvar");
-
-        jButtonClose.setText("Cancelar");
-        jButtonClose.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCloseActionPerformed(evt);
+                jButtonSaveActionPerformed(evt);
+            }
+        });
+
+        jButtonCancel.setText("Cancelar");
+        jButtonCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelActionPerformed(evt);
             }
         });
 
@@ -115,7 +122,7 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButtonClose)
+                        .addComponent(jButtonCancel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButtonSave)
                         .addGap(10, 10, 10))
@@ -183,7 +190,7 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSave)
-                    .addComponent(jButtonClose))
+                    .addComponent(jButtonCancel))
                 .addContainerGap())
         );
 
@@ -194,14 +201,19 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxGenderActionPerformed
 
-    private void jButtonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCloseActionPerformed
+    private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_jButtonCloseActionPerformed
+    }//GEN-LAST:event_jButtonCancelActionPerformed
+
+    private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showConfirmDialog(null, "Tem certeza que deseja salvar?");
+    }//GEN-LAST:event_jButtonSaveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonClose;
+    private javax.swing.JButton jButtonCancel;
     private javax.swing.JButton jButtonSave;
     private javax.swing.JComboBox jComboBoxBDay;
     private javax.swing.JComboBox jComboBoxBMonth;
