@@ -1,0 +1,10 @@
+diff a/Projeto Telefonia/src/lojatelefonia/ui/main/LojaTelefonia.java b/Projeto Telefonia/src/lojatelefonia/ui/main/LojaTelefonia.java	(rejected hunks)
+@@ -4,7 +4,7 @@
+  * and open the template in the editor.
+  */
+ package lojatelefonia.ui.main;
+-
++//testando
+ import lojatelefonia.ui.clientes.FormCadastrarCliente;
+ import lojatelefonia.ui.clientes.FormConsultarCliente;
+ import lojatelefonia.ui.produtos.FormCadastrarProduto;

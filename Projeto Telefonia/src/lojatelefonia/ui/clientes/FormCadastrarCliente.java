@@ -67,6 +67,11 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
         jButtonSave.setText("Salvar");
 
         jButtonClose.setText("Cancelar");
+        jButtonClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCloseActionPerformed(evt);
+            }
+        });
 
         jLabelBDay.setText("Dia");
 
@@ -188,6 +193,11 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
     private void jComboBoxGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxGenderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxGenderActionPerformed
+
+    private void jButtonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCloseActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButtonCloseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
