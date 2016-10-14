@@ -167,7 +167,20 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
 
     private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showConfirmDialog(null, "Tem certeza que deseja salvar?");
+        if (jTextFieldProductQty.getText().equalsIgnoreCase("")
+                || jTextFieldProductName.getText().equalsIgnoreCase("")
+                || jTextFieldProductCode.getText().equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(null, "Campos obrigatórios não preenchidos", "Failure", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int option = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja salvar?");
+            if (option == JOptionPane.YES_OPTION) {
+                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
+            } else if (option == JOptionPane.NO_OPTION) {
+                this.dispose();
+            } else {
+            }
+
+        }
     }//GEN-LAST:event_jButtonSaveActionPerformed
 
 
