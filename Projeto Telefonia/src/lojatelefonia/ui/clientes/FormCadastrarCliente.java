@@ -101,6 +101,12 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
 
         jComboBoxEC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Solteiro(a)", "Casado(a)", "Viúvo(a)", "Divorciado(a)", "Separado(a)" }));
 
+        jTextFieldName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNameActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -210,6 +216,10 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         JOptionPane.showConfirmDialog(null, "Tem certeza que deseja salvar?");
     }//GEN-LAST:event_jButtonSaveActionPerformed
+
+    private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
+        
+    }//GEN-LAST:event_jTextFieldNameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
