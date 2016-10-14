@@ -177,9 +177,7 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
             } else if (option == JOptionPane.NO_OPTION) {
                 this.dispose();
-            } else {
             }
-
         }
     }//GEN-LAST:event_jButtonSaveActionPerformed
 
