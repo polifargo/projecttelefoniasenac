@@ -11,7 +11,7 @@ package lojatelefonia.ui.clientes;
  */
 public class CadastrarCliente {
 
-    private String nome, CPF, endereco;
+    private String nome, cpf, endereco, estadoCivil, genero;
 
     public String getNome() {
         return nome;
@@ -22,11 +22,11 @@ public class CadastrarCliente {
     }
 
     public String getCPF() {
-        return CPF;
+        return cpf;
     }
 
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getEndereco() {
