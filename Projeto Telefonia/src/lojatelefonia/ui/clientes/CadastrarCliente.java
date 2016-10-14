@@ -10,29 +10,31 @@ package lojatelefonia.ui.clientes;
  * @author rafael.fsilva7
  */
 public class CadastrarCliente {
+
     private String nome, CPF, endereco;
-    
-    public String getNome(){
+
+    public String getNome() {
         return nome;
     }
-    
-    public String getCPF(){
-        return CPF;
-    }
-    
-    public String getEndereco(){
-        return endereco;
-    }
-    
-    public void setNome(String nome){
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    public void setCPF(String CPF){
+
+    public String getCPF() {
+        return CPF;
+    }
+
+    public void setCPF(String CPF) {
         this.CPF = CPF;
     }
-    
-    public void setEndereco(String endereco){
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
+
 }
