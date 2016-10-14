@@ -80,7 +80,7 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
 
         jLabelPattern.setText("Marca");
 
-        jComboBoxChoosePattern.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Samsung", "Apple", "LG", "Nokia", "Lenovo", "Motorola", "ASUS" }));
+        jComboBoxChoosePattern.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Outras...", "Samsung", "Apple", "LG", "Nokia", "Lenovo", "Motorola", "ASUS" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
