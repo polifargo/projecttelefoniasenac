@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package lojatelefonia.ui.main;
-//teteteredsdassdasaddas
+
 import lojatelefonia.ui.clientes.FormCadastrarCliente;
 import lojatelefonia.ui.clientes.FormConsultarCliente;
 import lojatelefonia.ui.produtos.FormCadastrarProduto;
@@ -16,7 +16,7 @@ import java.awt.Image;
 import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JInternalFrame;
-//asfigaifsoifd
+
 /**
  *
  * @author matheus.esanto1
