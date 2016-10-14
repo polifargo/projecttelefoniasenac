@@ -11,16 +11,16 @@ package lojatelefonia.ui.clientes;
  */
 public class CadastrarCliente {
 
-    private String nome, cpf, endereco, estadoCivil, genero, nascimentoDia, nascimentoMes, nascimentoAno;
-
+    private String nome;
     public String getNome() {
         return nome;
     }
-
+    
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    private String cpf;
     public String getCPF() {
         return cpf;
     }
@@ -29,6 +29,7 @@ public class CadastrarCliente {
         this.cpf = cpf;
     }
 
+    private String endereco;
     public String getEndereco() {
         return endereco;
     }
@@ -37,6 +38,7 @@ public class CadastrarCliente {
         this.endereco = endereco;
     }
     
+    private String estadoCivil;
     public String getEstadoCivil(){
         return estadoCivil;
     }
@@ -45,6 +47,7 @@ public class CadastrarCliente {
         this.estadoCivil = estadoCivil;
     }
     
+    private String genero;
     public String getGenero(){
         return genero;
     }
@@ -53,6 +56,7 @@ public class CadastrarCliente {
         this.genero = genero;
     }
     
+    private String nascimentoDia;
     public String getNascimentoDia(){
         return nascimentoDia;
     }
@@ -61,6 +65,7 @@ public class CadastrarCliente {
         this.nascimentoDia = nascimentoDia;
     }
     
+    private String nascimentoMes;
     public String getNascimentoMes(){
         return nascimentoMes;
     }
@@ -69,6 +74,7 @@ public class CadastrarCliente {
         this.nascimentoMes = nascimentoMes;
     }
     
+    private String nascimentoAno;
     public String getNascimentoAno(){
         return nascimentoAno;
     }
