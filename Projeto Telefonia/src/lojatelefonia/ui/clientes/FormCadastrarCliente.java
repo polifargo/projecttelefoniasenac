@@ -220,7 +220,7 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
                 String erro3 = jTextFieldYear.getText();
                 if (!erro.equals("1234567890") || !erro2.equals("1234567890") || !erro3.equals("1234567890"));
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Digite apenas numeros!");
+                JOptionPane.showMessageDialog(null, "Digite apenas numeros!!");
                 return;
             }
             int option = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja salvar?");
