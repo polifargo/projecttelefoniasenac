@@ -216,21 +216,9 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
         } else {
             try {
                 String erro = jTextFieldCPF.getText();
-                if (!erro.equals("1234567890"));
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Digite apenas numeros!");
-                return;
-            }
-            try {
-                String erro = jTextFieldDay.getText();
-                if (!erro.equals("1234567890"));
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Digite apenas numeros!");
-                return;
-            }
-            try {
-                String erro = jTextFieldYear.getText();
-                if (!erro.equals("1234567890"));
+                String erro2 = jTextFieldDay.getText();
+                String erro3 = jTextFieldYear.getText();
+                if (!erro.equals("1234567890") || !erro2.equals("1234567890") || !erro3.equals("1234567890"));
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Digite apenas numeros!");
                 return;
