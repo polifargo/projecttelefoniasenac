@@ -167,17 +167,26 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
 
     private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
         // TODO add your handling code here:
-        if (jTextFieldProductQty.getText().equalsIgnoreCase("")
+           if (jTextFieldProductQty.getText().equalsIgnoreCase("")
                 || jTextFieldProductName.getText().equalsIgnoreCase("")
                 || jTextFieldProductCode.getText().equalsIgnoreCase("")) {
             JOptionPane.showMessageDialog(null, "Campos obrigatórios não preenchidos", "Failure", JOptionPane.ERROR_MESSAGE);
         } else {
+            try {
+                String erro = jLabelProductCode.getText();
+                String erro2 = jLabelProductQty.getText();
+                if(!erro.equals("1234567890") || erro2.equals("123456789"));
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Digite apenas numeros!");
+                return;
+            }
             int option = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja salvar?");
             if (option == JOptionPane.YES_OPTION) {
+
                 JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
             } else if (option == JOptionPane.NO_OPTION) {
                 this.dispose();
-            }
+            } 
         }
     }//GEN-LAST:event_jButtonSaveActionPerformed
 
