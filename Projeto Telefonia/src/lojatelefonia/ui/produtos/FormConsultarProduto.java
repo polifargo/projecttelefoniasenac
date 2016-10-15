@@ -35,8 +35,8 @@ public class FormConsultarProduto extends javax.swing.JInternalFrame {
         jScrollPaneProducts = new javax.swing.JScrollPane();
         jTableProducts = new javax.swing.JTable();
         jButtonCancel = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonUpdate = new javax.swing.JButton();
+        jButtonDelete = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -65,29 +65,39 @@ public class FormConsultarProduto extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("Atualizar");
+        jButtonUpdate.setText("Atualizar");
+        jButtonUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonUpdateActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Excluir");
+        jButtonDelete.setText("Excluir");
+        jButtonDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPaneProducts, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonCancel))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabelSearch)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldSearch))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonCancel)))
+                        .addComponent(jTextFieldSearch)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -102,8 +112,8 @@ public class FormConsultarProduto extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCancel)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButtonUpdate)
+                    .addComponent(jButtonDelete))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -115,11 +125,33 @@ public class FormConsultarProduto extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_jButtonCancelActionPerformed
 
+    private void jButtonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateActionPerformed
+        // TODO add your handling code here:
+        if (jTableProducts.getRowSelectionAllowed()) {
+            int option = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja deletar?");
+            if (option == JOptionPane.YES_OPTION) {
+                JOptionPane.showMessageDialog(null, "Item deletado com sucesso.");
+            } else if (option == JOptionPane.NO_OPTION) {
+                this.dispose();
+            }
+    }//GEN-LAST:event_jButtonUpdateActionPerformed
+
+    private void jButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteActionPerformed
+        // TODO add your handling code here:
+        if (jTableProducts.getRowSelectionAllowed()) {
+            int option = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja deletar?");
+            if (option == JOptionPane.YES_OPTION) {
+                JOptionPane.showMessageDialog(null, "Item deletado com sucesso.");
+            } else if (option == JOptionPane.NO_OPTION) {
+                this.dispose();
+            }
+        }
+    }//GEN-LAST:event_jButtonDeleteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonCancel;
+    private javax.swing.JButton jButtonDelete;
+    private javax.swing.JButton jButtonUpdate;
     private javax.swing.JLabel jLabelSearch;
     private javax.swing.JScrollPane jScrollPaneProducts;
     private javax.swing.JTable jTableProducts;

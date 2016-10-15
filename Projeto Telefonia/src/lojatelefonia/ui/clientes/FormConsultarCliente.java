@@ -34,8 +34,8 @@ public class FormConsultarCliente extends javax.swing.JInternalFrame {
         jScrollPaneClientes = new javax.swing.JScrollPane();
         jTableClientes = new javax.swing.JTable();
         jButtonCancel = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonUpdate = new javax.swing.JButton();
+        jButtonDelete = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -64,9 +64,19 @@ public class FormConsultarCliente extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("Atualizar");
+        jButtonUpdate.setText("Atualizar");
+        jButtonUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonUpdateActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Excluir");
+        jButtonDelete.setText("Excluir");
+        jButtonDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,9 +92,9 @@ public class FormConsultarCliente extends javax.swing.JInternalFrame {
                         .addComponent(jTextFieldSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonCancel)))
                 .addContainerGap())
@@ -101,8 +111,8 @@ public class FormConsultarCliente extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCancel)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButtonUpdate)
+                    .addComponent(jButtonDelete))
                 .addContainerGap())
         );
 
@@ -114,11 +124,34 @@ public class FormConsultarCliente extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_jButtonCancelActionPerformed
 
+    private void jButtonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateActionPerformed
+        // TODO add your handling code here:
+        if (jTableClientes.getRowSelectionAllowed()) {
+            int option = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja atualizar?");
+            if (option == JOptionPane.YES_OPTION) {
+            } else if (option == JOptionPane.NO_OPTION) {
+                this.dispose();
+            }
+        }
+    }//GEN-LAST:event_jButtonUpdateActionPerformed
+
+    private void jButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteActionPerformed
+        // TODO add your handling code here:
+        if (jTableClientes.getRowSelectionAllowed()) {
+            int option = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja deletar?");
+            if (option == JOptionPane.YES_OPTION) {
+                JOptionPane.showMessageDialog(null, "Item deletado com sucesso.");
+            } else if (option == JOptionPane.NO_OPTION) {
+                this.dispose();
+            }
+        }
+    }//GEN-LAST:event_jButtonDeleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonCancel;
+    private javax.swing.JButton jButtonDelete;
+    private javax.swing.JButton jButtonUpdate;
     private javax.swing.JLabel jLabelSearch;
     private javax.swing.JScrollPane jScrollPaneClientes;
     private javax.swing.JTable jTableClientes;
