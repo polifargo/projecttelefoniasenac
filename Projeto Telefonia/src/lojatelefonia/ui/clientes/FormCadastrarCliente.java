@@ -214,7 +214,27 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
 
     private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showConfirmDialog(null, "Tem certeza que deseja salvar?");
+           if (jTextFieldAddress.getText().equalsIgnoreCase("")
+                || jTextFieldCPF.getText().equalsIgnoreCase("")
+                || jTextFieldName.getText().equalsIgnoreCase("")
+                || jTextFieldDay.getText()) {
+            JOptionPane.showMessageDialog(null, "Campos obrigatórios não preenchidos", "Failure", JOptionPane.ERROR_MESSAGE);
+        } else {
+            try {
+                String erro = jTextFieldCPF.getText();
+                if(!erro.equals("1234567890"));
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Digite apenas numeros!");
+                return;
+            }
+            int option = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja salvar?");
+            if (option == JOptionPane.YES_OPTION) {
+
+                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
+            } else if (option == JOptionPane.NO_OPTION) {
+                this.dispose();
+            } 
+        }
     }//GEN-LAST:event_jButtonSaveActionPerformed
 
     private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
