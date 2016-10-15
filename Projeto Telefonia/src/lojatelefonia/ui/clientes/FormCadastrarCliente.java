@@ -47,7 +47,7 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
         jTextFieldCPF = new javax.swing.JTextField();
         jTextFieldName = new javax.swing.JTextField();
         jTextFieldDay = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jTextFieldYear = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -152,7 +152,7 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabelBYear)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)))
+                        .addComponent(jTextFieldYear, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -185,7 +185,7 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
                     .addComponent(jComboBoxBMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelBYear)
                     .addComponent(jTextFieldDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSave)
@@ -210,7 +210,8 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
         if (jTextFieldAddress.getText().equalsIgnoreCase("")
                 || jTextFieldCPF.getText().equalsIgnoreCase("")
                 || jTextFieldName.getText().equalsIgnoreCase("")
-                || jTextFieldDay.getText().equalsIgnoreCase("")) {
+                || jTextFieldDay.getText().equalsIgnoreCase("")
+                || jTextFieldYear.getText().equalsIgnoreCase("")) {
             JOptionPane.showMessageDialog(null, "Campos obrigatórios não preenchidos", "Failure", JOptionPane.ERROR_MESSAGE);
         } else {
             try {
@@ -220,18 +221,32 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Digite apenas numeros!");
                 return;
             }
+            try {
+                String erro = jTextFieldDay.getText();
+                if (!erro.equals("1234567890"));
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Digite apenas numeros!");
+                return;
+            }
+            try {
+                String erro = jTextFieldYear.getText();
+                if (!erro.equals("1234567890"));
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Digite apenas numeros!");
+                return;
+            }
             int option = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja salvar?");
             if (option == JOptionPane.YES_OPTION) {
-                
+
                 JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
             } else if (option == JOptionPane.NO_OPTION) {
                 this.dispose();
-            }            
+            }
         }
     }//GEN-LAST:event_jButtonSaveActionPerformed
 
     private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
-        
+
     }//GEN-LAST:event_jTextFieldNameActionPerformed
 
 
@@ -250,10 +265,10 @@ public class FormCadastrarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelEC;
     private javax.swing.JLabel jLabelGender;
     private javax.swing.JLabel jLabelName;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextFieldAddress;
     private javax.swing.JTextField jTextFieldCPF;
     private javax.swing.JTextField jTextFieldDay;
     private javax.swing.JTextField jTextFieldName;
+    private javax.swing.JTextField jTextFieldYear;
     // End of variables declaration//GEN-END:variables
 }
