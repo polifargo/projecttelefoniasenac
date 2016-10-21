@@ -6,10 +6,9 @@
 package lojatelefonia.ui.produtos;
 
 import javax.swing.JOptionPane;
-import lojatelefonia.ui.clientes.*;
 
 /**
- *
+ * dsdsaasdsadasasd
  * @author matheus.esanto1
  */
 public class FormCadastrarProduto extends javax.swing.JInternalFrame {
