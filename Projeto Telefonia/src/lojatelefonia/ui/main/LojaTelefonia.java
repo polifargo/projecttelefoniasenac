@@ -16,6 +16,7 @@ import java.awt.Image;
 import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JInternalFrame;
+import lojatelefonia.ui.relatorio.FormRelatorio;
 
 /**
  *
@@ -28,6 +29,7 @@ public class LojaTelefonia extends javax.swing.JFrame {
     FormCadastrarProduto cadastrarProduto = null;
     FormConsultarProduto consultarProduto = null;
     FormRealizarVenda realizarVenda = null;
+    FormRelatorio consultarRelatorio = null;
 
     /**
      * Creates new form LojaTelefonia
@@ -71,6 +73,8 @@ public class LojaTelefonia extends javax.swing.JFrame {
         jMenuItemConsultarCliente = new javax.swing.JMenuItem();
         jMenuVenda = new javax.swing.JMenu();
         jMenuItemRealizarVenda = new javax.swing.JMenuItem();
+        jMenuRelatório = new javax.swing.JMenu();
+        jMenuItemConsultarRelatorio = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Loja Telefonia");
@@ -138,6 +142,18 @@ public class LojaTelefonia extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuVenda);
 
+        jMenuRelatório.setText("Relatório");
+
+        jMenuItemConsultarRelatorio.setText("Consultar Relatório");
+        jMenuItemConsultarRelatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConsultarRelatorioActionPerformed(evt);
+            }
+        });
+        jMenuRelatório.add(jMenuItemConsultarRelatorio);
+
+        jMenuBar1.add(jMenuRelatório);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -204,6 +220,16 @@ public class LojaTelefonia extends javax.swing.JFrame {
         realizarVenda.toFront();
     }//GEN-LAST:event_jMenuItemRealizarVendaActionPerformed
 
+    private void jMenuItemConsultarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConsultarRelatorioActionPerformed
+        // TODO add your handling code here:
+        if (consultarRelatorio == null || !consultarRelatorio.isDisplayable()) {
+            consultarRelatorio = new FormRelatorio();
+            desktop.add(consultarRelatorio);
+            this.openFrameInCenter(consultarRelatorio);
+        }
+        consultarRelatorio.toFront();
+    }//GEN-LAST:event_jMenuItemConsultarRelatorioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -261,8 +287,10 @@ public class LojaTelefonia extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemCadastrarProduto;
     private javax.swing.JMenuItem jMenuItemConsultarCliente;
     private javax.swing.JMenuItem jMenuItemConsultarProduto;
+    private javax.swing.JMenuItem jMenuItemConsultarRelatorio;
     private javax.swing.JMenuItem jMenuItemRealizarVenda;
     private javax.swing.JMenu jMenuProdutos;
+    private javax.swing.JMenu jMenuRelatório;
     private javax.swing.JMenu jMenuVenda;
     // End of variables declaration//GEN-END:variables
 
