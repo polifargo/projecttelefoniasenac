@@ -42,8 +42,8 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
         jComboBoxChoosePattern = new javax.swing.JComboBox();
         jLabelPattern = new javax.swing.JLabel();
         jLabelProductCode = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldQtd = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldSerie = new javax.swing.JFormattedTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -84,14 +84,14 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
 
         jLabelProductCode.setText("N° Série");
 
-        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jFormattedTextFieldQtd.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        jFormattedTextFieldQtd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField1ActionPerformed(evt);
+                jFormattedTextFieldQtdActionPerformed(evt);
             }
         });
 
-        jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        jFormattedTextFieldSerie.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
         javax.swing.GroupLayout jPanelProductLayout = new javax.swing.GroupLayout(jPanelProduct);
         jPanelProduct.setLayout(jPanelProductLayout);
@@ -110,7 +110,7 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
                         .addGroup(jPanelProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBoxProductDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBoxChoosePattern, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jFormattedTextFieldQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                         .addGroup(jPanelProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelProductLayout.createSequentialGroup()
@@ -120,7 +120,7 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelProductLayout.createSequentialGroup()
                                 .addComponent(jLabelProductCode)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jFormattedTextFieldSerie, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jTextFieldProductName))
                 .addContainerGap())
         );
@@ -141,8 +141,8 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
                 .addGroup(jPanelProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelProductQty)
                     .addComponent(jLabelProductCode)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jFormattedTextFieldQtd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextFieldSerie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(jPanelProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelPattern)
@@ -196,9 +196,9 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButtonSaveActionPerformed
 
-    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+    private void jFormattedTextFieldQtdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldQtdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
+    }//GEN-LAST:event_jFormattedTextFieldQtdActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -207,8 +207,8 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox jComboBoxChoosePattern;
     private javax.swing.JComboBox jComboBoxProductColor;
     private javax.swing.JComboBox jComboBoxProductDesc;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
+    private javax.swing.JFormattedTextField jFormattedTextFieldQtd;
+    private javax.swing.JFormattedTextField jFormattedTextFieldSerie;
     private javax.swing.JLabel jLabelPattern;
     private javax.swing.JLabel jLabelProductCode;
     private javax.swing.JLabel jLabelProductColor;

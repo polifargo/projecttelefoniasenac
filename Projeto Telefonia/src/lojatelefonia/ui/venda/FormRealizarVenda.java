@@ -38,9 +38,9 @@ public class FormRealizarVenda extends javax.swing.JInternalFrame {
         jLabelClient = new javax.swing.JLabel();
         jLabelQty = new javax.swing.JLabel();
         jTextFieldQty = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPaneClients = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPaneProducts = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
 
         setClosable(true);
@@ -81,7 +81,7 @@ public class FormRealizarVenda extends javax.swing.JInternalFrame {
                 "Nome"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPaneClients.setViewportView(jTable1);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,7 +94,7 @@ public class FormRealizarVenda extends javax.swing.JInternalFrame {
                 "Nome", "Descrição", "Quantidade"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPaneProducts.setViewportView(jTable2);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -104,9 +104,9 @@ public class FormRealizarVenda extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPaneClients, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPaneProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabelClient)
@@ -128,8 +128,8 @@ public class FormRealizarVenda extends javax.swing.JInternalFrame {
                     .addComponent(jLabelProduct))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPaneClients, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                    .addComponent(jScrollPaneProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelQty)
@@ -185,8 +185,8 @@ public class FormRealizarVenda extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelProduct;
     private javax.swing.JLabel jLabelQty;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPaneClients;
+    private javax.swing.JScrollPane jScrollPaneProducts;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextFieldQty;

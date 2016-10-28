@@ -37,7 +37,7 @@ public class FormConsultarProduto extends javax.swing.JInternalFrame {
         jButtonCancel = new javax.swing.JButton();
         jButtonDelete = new javax.swing.JButton();
         jButtonUpdate = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jButtonSearch = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -86,7 +86,7 @@ public class FormConsultarProduto extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("Pesquisar");
+        jButtonSearch.setText("Pesquisar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,7 +103,7 @@ public class FormConsultarProduto extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(jButtonSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -123,7 +123,7 @@ public class FormConsultarProduto extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelSearch)
-                    .addComponent(jButton1))
+                    .addComponent(jButtonSearch))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPaneProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -171,9 +171,9 @@ public class FormConsultarProduto extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonCancel;
     private javax.swing.JButton jButtonDelete;
+    private javax.swing.JButton jButtonSearch;
     private javax.swing.JButton jButtonUpdate;
     private javax.swing.JLabel jLabelSearch;
     private javax.swing.JProgressBar jProgressBar1;
