@@ -8,7 +8,7 @@ package lojatelefonia.ui.produtos;
 import javax.swing.JOptionPane;
 
 /**
- * 
+ *
  * @author matheus.esanto1
  */
 public class FormCadastrarProduto extends javax.swing.JInternalFrame {
@@ -39,11 +39,11 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
         jComboBoxProductColor = new javax.swing.JComboBox();
         jLabelProductColor = new javax.swing.JLabel();
         jLabelProductQty = new javax.swing.JLabel();
-        jTextFieldProductQty = new javax.swing.JTextField();
         jComboBoxChoosePattern = new javax.swing.JComboBox();
         jLabelPattern = new javax.swing.JLabel();
-        jTextFieldProductCode = new javax.swing.JTextField();
         jLabelProductCode = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jFormattedTextField2 = new javax.swing.JFormattedTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -84,6 +84,15 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
 
         jLabelProductCode.setText("N° Série");
 
+        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField1ActionPerformed(evt);
+            }
+        });
+
+        jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+
         javax.swing.GroupLayout jPanelProductLayout = new javax.swing.GroupLayout(jPanelProduct);
         jPanelProduct.setLayout(jPanelProductLayout);
         jPanelProductLayout.setHorizontalGroup(
@@ -101,7 +110,7 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
                         .addGroup(jPanelProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBoxProductDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBoxChoosePattern, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldProductQty, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                         .addGroup(jPanelProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelProductLayout.createSequentialGroup()
@@ -110,8 +119,8 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
                                 .addComponent(jComboBoxProductColor, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelProductLayout.createSequentialGroup()
                                 .addComponent(jLabelProductCode)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextFieldProductCode, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jTextFieldProductName))
                 .addContainerGap())
         );
@@ -131,9 +140,9 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelProductQty)
-                    .addComponent(jTextFieldProductQty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldProductCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelProductCode))
+                    .addComponent(jLabelProductCode)
+                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(jPanelProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelPattern)
@@ -178,28 +187,18 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
 
     private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
         // TODO add your handling code here:
-           if (jTextFieldProductQty.getText().equalsIgnoreCase("")
-                || jTextFieldProductName.getText().equalsIgnoreCase("")
-                || jTextFieldProductCode.getText().equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(null, "Campos obrigatórios não preenchidos", "Failure", JOptionPane.ERROR_MESSAGE);
-        } else {
-            try {
-                String erro = jLabelProductCode.getText();
-                String erro2 = jLabelProductQty.getText();
-                if(!erro.equals("1234567890") || erro2.equals("123456789"));
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Digite apenas numeros!");
-                return;
-            }
-            int option = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja salvar?");
-            if (option == JOptionPane.YES_OPTION) {
+        int option = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja salvar?");
+        if (option == JOptionPane.YES_OPTION) {
 
-                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
-            } else if (option == JOptionPane.NO_OPTION) {
-                this.dispose();
-            } 
+            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
+        } else if (option == JOptionPane.NO_OPTION) {
+            this.dispose();
         }
     }//GEN-LAST:event_jButtonSaveActionPerformed
+
+    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -208,6 +207,8 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox jComboBoxChoosePattern;
     private javax.swing.JComboBox jComboBoxProductColor;
     private javax.swing.JComboBox jComboBoxProductDesc;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabelPattern;
     private javax.swing.JLabel jLabelProductCode;
     private javax.swing.JLabel jLabelProductColor;
@@ -215,8 +216,6 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelProductName;
     private javax.swing.JLabel jLabelProductQty;
     private javax.swing.JPanel jPanelProduct;
-    private javax.swing.JTextField jTextFieldProductCode;
     private javax.swing.JTextField jTextFieldProductName;
-    private javax.swing.JTextField jTextFieldProductQty;
     // End of variables declaration//GEN-END:variables
 }
