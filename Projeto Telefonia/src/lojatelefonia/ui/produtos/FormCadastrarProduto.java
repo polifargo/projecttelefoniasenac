@@ -6,6 +6,8 @@
 package lojatelefonia.ui.produtos;
 
 import javax.swing.JOptionPane;
+import lojatelefonia.model.produtos.Produto;
+import lojatelefonia.services.produto.ServicoProduto;
 
 /**
  *
@@ -44,6 +46,9 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
         jLabelProductCode = new javax.swing.JLabel();
         jFormattedTextFieldQtd = new javax.swing.JFormattedTextField();
         jFormattedTextFieldSerie = new javax.swing.JFormattedTextField();
+        jLabelProductCode1 = new javax.swing.JLabel();
+        jFormattedTextFieldProductPrice = new javax.swing.JFormattedTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -97,6 +102,17 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
                 jFormattedTextFieldSerieActionPerformed(evt);
             }
         });
+        jFormattedTextFieldSerie.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jFormattedTextFieldSerieKeyTyped(evt);
+            }
+        });
+
+        jLabelProductCode1.setText("Valor");
+
+        jFormattedTextFieldProductPrice.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
+
+        jLabel1.setText("R$");
 
         javax.swing.GroupLayout jPanelProductLayout = new javax.swing.GroupLayout(jPanelProduct);
         jPanelProduct.setLayout(jPanelProductLayout);
@@ -111,24 +127,32 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
                     .addComponent(jLabelProductName))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelProductLayout.createSequentialGroup()
-                        .addComponent(jComboBoxChoosePattern, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanelProductLayout.createSequentialGroup()
+                    .addComponent(jTextFieldProductName)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelProductLayout.createSequentialGroup()
                         .addGroup(jPanelProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelProductLayout.createSequentialGroup()
-                                .addComponent(jFormattedTextFieldQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelProductCode))
+                                .addGroup(jPanelProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelProductLayout.createSequentialGroup()
+                                        .addComponent(jFormattedTextFieldQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabelProductCode))
+                                    .addGroup(jPanelProductLayout.createSequentialGroup()
+                                        .addComponent(jComboBoxProductDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabelProductColor)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                             .addGroup(jPanelProductLayout.createSequentialGroup()
-                                .addComponent(jComboBoxProductDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelProductColor)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jComboBoxChoosePattern, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelProductCode1)
+                                .addGap(25, 25, 25)))
+                        .addGroup(jPanelProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanelProductLayout.createSequentialGroup()
+                                .addComponent(jFormattedTextFieldProductPrice)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel1))
                             .addComponent(jFormattedTextFieldSerie, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxProductColor, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jTextFieldProductName))
+                            .addComponent(jComboBoxProductColor, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
 
@@ -158,8 +182,11 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanelProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelPattern)
-                    .addComponent(jComboBoxChoosePattern, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(13, Short.MAX_VALUE))
+                    .addComponent(jComboBoxChoosePattern, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelProductCode1)
+                    .addComponent(jFormattedTextFieldProductPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jPanelProductLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jComboBoxChoosePattern, jComboBoxProductColor, jComboBoxProductDesc, jFormattedTextFieldQtd, jFormattedTextFieldSerie});
@@ -203,8 +230,36 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         int option = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja salvar?");
         if (option == JOptionPane.YES_OPTION) {
+            //Cria uma instância do cliente e obtém
+            //seus valores dos campos da tela
+            Produto prod = new Produto();
+            prod.setNome(jTextFieldProductName.getText());
+            prod.setSerie(Integer.parseInt(jFormattedTextFieldSerie.getText()));
+            prod.setDesc((String) jComboBoxProductDesc.getSelectedItem());
+            prod.setCor((String) jComboBoxProductColor.getSelectedItem());
+            prod.setMarca((String) jComboBoxChoosePattern.getSelectedItem());
+            prod.setQtd(Integer.parseInt(jFormattedTextFieldQtd.getText()));
+            prod.setValor(Double.parseDouble(jFormattedTextFieldProductPrice.getText()));
+            try {
+                //Chama o serviço para cadastro do cliente
+                ServicoProduto.cadastrarProduto(prod);
+            } catch (Exception e) {
+                //Exibe mensagens de erro para o usuário
+                JOptionPane.showMessageDialog(rootPane, e.getMessage(),
+                        "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
-            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
+            //Caso tenha chegado até aqui, o cliente foi inserido com sucesso
+            //Então exibe uma mensagem de sucesso para o usuário
+            JOptionPane.showMessageDialog(rootPane, "Produto inserido com sucesso",
+                    "Cadastro efetuado", JOptionPane.INFORMATION_MESSAGE);
+
+            //Limpa os campos da tela após realizar a inserção
+            jTextFieldProductName.setText("");
+            jFormattedTextFieldSerie.setText("");
+            jFormattedTextFieldQtd.setText("");
+            jFormattedTextFieldProductPrice.setText("");
         } else if (option == JOptionPane.NO_OPTION) {
             this.dispose();
         }
@@ -217,16 +272,26 @@ public class FormCadastrarProduto extends javax.swing.JInternalFrame {
     private void jFormattedTextFieldSerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldSerieActionPerformed
     }//GEN-LAST:event_jFormattedTextFieldSerieActionPerformed
 
+    private void jFormattedTextFieldSerieKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jFormattedTextFieldSerieKeyTyped
+        // TODO add your handling code here:
+        if (jFormattedTextFieldSerie.getText().length() >= 4) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jFormattedTextFieldSerieKeyTyped
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancel;
     private javax.swing.JButton jButtonSave;
     private javax.swing.JComboBox jComboBoxChoosePattern;
     private javax.swing.JComboBox jComboBoxProductColor;
     private javax.swing.JComboBox jComboBoxProductDesc;
+    private javax.swing.JFormattedTextField jFormattedTextFieldProductPrice;
     private javax.swing.JFormattedTextField jFormattedTextFieldQtd;
     private javax.swing.JFormattedTextField jFormattedTextFieldSerie;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelPattern;
     private javax.swing.JLabel jLabelProductCode;
+    private javax.swing.JLabel jLabelProductCode1;
     private javax.swing.JLabel jLabelProductColor;
     private javax.swing.JLabel jLabelProductDesc;
     private javax.swing.JLabel jLabelProductName;

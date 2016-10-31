@@ -6,33 +6,34 @@
 package lojatelefonia.db.utils;
 
 import java.sql.Connection;
+// conexão SQL para Java 
 import java.sql.DriverManager;
+// driver de conexão SQL para Java 
 import java.sql.SQLException;
 import java.util.Properties;
+import loja.telefonia.constants.MainConstants;
 
-/**
- *
- * @author matheus.esanto1
- */
 public class ConnectionUtils {
 
-    private static Connection connection = null;
-
-    public static Connection getConnection() throws SQLException {
-        //Só tenta abrir uma conexão se não existe uma aberta.
-        if (connection == null || connection.isClosed()) {
-            //Endereço de conexão com o banco.
-            String dbURL = "jdbc:derby://localhost:1527/jdbc_test";
-
-            //Propriedades para armazenamento de usuário e senha.
+    public static Connection getConnection() {
+        //Conexão para abertura e fechamento
+        Connection connection = null;
+        try {
+            //Só tenta abrir uma conexão se não existir ou estiver fechada            
+            //Endereço de conexão com o banco de dados
+            String dbURL = MainConstants.DB_ADDRESS;
+            //Propriedades para armazenamento de usuário e senha
             Properties properties = new Properties();
-            properties.put("user", "utest");
-            properties.put("password", "test");
-            //Realiza a conexão com o banco.
+            properties.put("user", MainConstants.DB_USER);
+            properties.put("password", MainConstants.DB_PASS);
+            //Realiza a conexão com o banco
             connection = DriverManager.getConnection(dbURL, properties);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
-        //Retorna conexão.
+
+        //Retorna a conexão
         return connection;
     }
-
 }

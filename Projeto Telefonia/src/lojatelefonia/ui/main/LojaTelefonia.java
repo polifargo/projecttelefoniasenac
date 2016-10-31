@@ -16,6 +16,8 @@ import java.awt.Image;
 import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import lojatelefonia.services.utils.ServiceUtils;
 import lojatelefonia.ui.relatorio.FormRelatorio;
 
 /**
@@ -35,7 +37,14 @@ public class LojaTelefonia extends javax.swing.JFrame {
      * Creates new form LojaTelefonia
      */
     public LojaTelefonia() {
+        //Verifica a conexão com a fonte de dados e prende o usuário
+        //num loop de tentativas de conexão até que a conexão esteja
+        //disponível ou ele desista de tentar, situação onde o sistema
+        //é encerrado
+        this.checkDs();
         initComponents();
+        //Faz com que a janela seja aberta no meio da tela
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -169,6 +178,82 @@ public class LojaTelefonia extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    //Métodos de acesso para os formulários abertos pela tela principal
+    public FormCadastrarCliente getCadastrarCliente() {
+        return cadastrarCliente;
+    }
+
+    public void setCadastrarCliente(FormCadastrarCliente cadastrarCliente) {
+        this.cadastrarCliente = cadastrarCliente;
+    }
+
+    public FormConsultarCliente getConsultarCliente() {
+        return consultarCliente;
+    }
+
+    public void setConsultarCliente(FormConsultarCliente consultarCliente) {
+        this.consultarCliente = consultarCliente;
+    }
+
+    public FormCadastrarProduto getCadastrarProduto() {
+        return cadastrarProduto;
+    }
+
+    public void setCadastrarProduto(FormCadastrarProduto cadastrarProduto) {
+        this.cadastrarProduto = cadastrarProduto;
+    }
+
+    public FormConsultarProduto getConsultarProduto() {
+        return consultarProduto;
+    }
+
+    public void setConsultarProduto(FormConsultarProduto consultarProduto) {
+        this.consultarProduto = consultarProduto;
+    }
+
+    public FormRelatorio getConsultarRelatorio() {
+        return consultarRelatorio;
+    }
+
+    public void setConsultarRelatorio(FormRelatorio consultarRelatorio) {
+        this.consultarRelatorio = consultarRelatorio;
+    }
+
+    private void checkDs() {
+        //Inicializa uma flag indicadora da não
+        //existência de conexão
+        boolean isConnected = false;
+        //Loope de tentativas de conexão
+        do {
+            //Chama a classe "ServiceUtils" para verificar a existência de
+            //conexão com a fonte de dados
+            if (ServiceUtils.checkConnection()) {
+                //Se a conexão teve sucesso, indica a existência de conexão
+                //e interrompe o loop
+                isConnected = true;
+                break;
+            }
+
+            //Se chegamos aqui, a conexão não está funcionando. Devemos
+            //verificar com o usuário se ele quer tentar de novo ou sair
+            //do programa
+            int resposta = JOptionPane.showConfirmDialog(rootPane, "Não foi "
+                    + "encontrada conexão com a fonte de dados. \n"
+                    + "Verifique se o servidor da fonte de dados foi iniciado "
+                    + "e tente novamente.\n\n"
+                    + "Pressione \"Sim\" para tentar se conectar a fonte de "
+                    + "dados novamente.", "Sem fonte de dados",
+                    JOptionPane.YES_NO_OPTION);
+            //Se a resposta for negativa, fecha o programa.
+            //Senão, segue com o loop
+            if (resposta == JOptionPane.NO_OPTION
+                    || resposta == JOptionPane.CLOSED_OPTION) {
+                System.exit(0);
+            }
+        } //Fica no loop enquanto não houver conexão
+        while (!isConnected);
+    }
 
     private void jMenuItemCadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadastrarProdutoActionPerformed
         // TODO add your handling code here:
